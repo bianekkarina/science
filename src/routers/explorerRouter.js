@@ -5,7 +5,7 @@ import {
     show,
     update,
     destroy
-} from '../controllers/speciesController.js'
+} from '../controllers/explorerController.js'
 
 const router = Router()
 
