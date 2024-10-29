@@ -1,9 +1,11 @@
 import express from 'express'
 import connectDB from './config/db.js'
+import dotenv from 'dotenv'
 import explorerRouter from './routers/explorerRouter.js'
 import speciesRouter from './routers/speciesRouter.js'
 import expeditionRouter from './routers/expeditionRouter.js'
 
+dotenv.config()
 connectDB()
 
 const app = express()
@@ -13,4 +15,4 @@ app.use('/explorer', explorerRouter)
 app.use('/species', speciesRouter)
 app.use('/expedition', expeditionRouter)
 
-app.listen(3000, () => console.log('Servidor rodando na porta 3000!'));
+app.listen(process.env.PORT, () => console.log('Servidor rodando na porta 3000!'));
